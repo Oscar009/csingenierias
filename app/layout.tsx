@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
-import ClientThemeProvider from './clientThemeProvider';
+import ClientThemeProvider from './theme/clientThemeProvider';
 
 export const metadata = {
-  title: 'Next.js 14 with Material-UI',
+  title: 'Inmobiliaria CS Ingenierías y asociados',
   description: 'A Next.js 14 project using Material-UI and TypeScript',
 };
 
@@ -11,7 +11,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <body>
         <ClientThemeProvider>
-          <div>Hola</div>
+          <div>NAVBAR</div>
           {children}
         </ClientThemeProvider>
       </body>
