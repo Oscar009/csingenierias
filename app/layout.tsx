@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import ClientThemeProvider from './theme/clientThemeProvider';
+import DrawerAppBar from './components/AppBar/DrawerAppBar';
 
 export const metadata = {
   title: 'Inmobiliaria CS Ingenierías y asociados',
@@ -11,7 +12,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <body>
         <ClientThemeProvider>
-          <div>NAVBAR</div>
+          <DrawerAppBar />
           {children}
         </ClientThemeProvider>
       </body>
