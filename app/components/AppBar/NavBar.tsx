@@ -4,6 +4,8 @@ import { AppBar, Box, Button, IconButton, Toolbar, Typography } from "@mui/mater
 import MenuIcon from '@mui/icons-material/Menu';
 import { useRouter } from 'next/navigation'; // Reemplaza con la versión correcta del hook en App Router
 import { NavItem } from "@/app/interfaces/AppBar";
+import Image from "next/image";
+import logo from "../../assets/img/logo_blanco.png";
 
 interface NavBarProps {
   navItems: NavItem[];
@@ -29,13 +31,15 @@ export default function NavBar({ navItems, onMenuClick }: NavBarProps) {
         >
           <MenuIcon />
         </IconButton>
-        <Typography
-          variant="h6"
-          component="div"
-          sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-        >
-          MUI
-        </Typography>
+        <Box onClick={() => router.push('/projects')} sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
+          <Image
+            style={{ cursor: 'pointer' }}
+            src={logo}
+            alt="Logo"
+            width={80}
+            height={40}
+          />
+        </Box>
         <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
           {navItems.map((item) => (
             <Button key={item.route} sx={{ color: '#fff' }} onClick={() => handleNavigation(item.route)}>
