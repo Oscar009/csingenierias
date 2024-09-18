@@ -4,9 +4,16 @@ import { useState } from "react";
 import { Box, CssBaseline, Drawer } from "@mui/material";
 import NavBar from "./NavBar";
 import NavDrawer from "./NavDrawer";
+import { NavItem } from "@/app/interfaces/AppBar";
 
 const drawerWidth = 240;
-const navItems = ['Projects', 'About', 'Contact', 'Services', 'Frequent Questions'];
+const navItems: NavItem[] = [
+  { title: 'Projects', route: 'Projects', },
+  { title: 'About', route: 'About', },
+  { title: 'Contact', route: 'Contact', },
+  { title: 'Services', route: 'Services', },
+  { title: 'Frequent Questions', route: 'FrequentQuestions', },
+];
 
 export default function DrawerAppBar() {
   const [mobileOpen, setMobileOpen] = useState(false);

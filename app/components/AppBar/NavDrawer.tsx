@@ -1,10 +1,11 @@
 'use client';  // Asegura que se ejecute en el lado del cliente
 
+import { NavItem } from "@/app/interfaces/AppBar";
 import { Box, Divider, List, ListItem, ListItemButton, ListItemText, Typography } from "@mui/material";
 import { useRouter } from 'next/navigation'; // App Router
 
 interface NavDrawerProps {
-  navItems: string[];
+  navItems: NavItem[];
   onClose: () => void;
 }
 
@@ -24,9 +25,9 @@ export default function NavDrawer({ navItems, onClose }: NavDrawerProps) {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }} onClick={() => handleNavigation(item)}>
-              <ListItemText primary={item} />
+          <ListItem key={item.route} disablePadding>
+            <ListItemButton sx={{ textAlign: 'center' }} onClick={() => handleNavigation(item.route)}>
+              <ListItemText primary={item.title} />
             </ListItemButton>
           </ListItem>
         ))}

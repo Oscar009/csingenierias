@@ -3,9 +3,10 @@
 import { AppBar, Box, Button, IconButton, Toolbar, Typography } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import { useRouter } from 'next/navigation'; // Reemplaza con la versión correcta del hook en App Router
+import { NavItem } from "@/app/interfaces/AppBar";
 
 interface NavBarProps {
-  navItems: string[];
+  navItems: NavItem[];
   onMenuClick: () => void;
 }
 
@@ -37,8 +38,8 @@ export default function NavBar({ navItems, onMenuClick }: NavBarProps) {
         </Typography>
         <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
           {navItems.map((item) => (
-            <Button key={item} sx={{ color: '#fff' }} onClick={() => handleNavigation(item)}>
-              {item}
+            <Button key={item.route} sx={{ color: '#fff' }} onClick={() => handleNavigation(item.route)}>
+              {item.title}
             </Button>
           ))}
         </Box>
