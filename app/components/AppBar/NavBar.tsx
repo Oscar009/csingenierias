@@ -1,6 +1,6 @@
 'use client'; // Esto asegura que se renderiza solo en el cliente
 
-import { AppBar, Box, Button, IconButton, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Button, Divider, IconButton, Toolbar, Typography } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import { useRouter } from 'next/navigation'; // Reemplaza con la versión correcta del hook en App Router
 import { NavItem } from "@/app/interfaces/AppBar";
@@ -40,10 +40,10 @@ export default function NavBar({ navItems, onMenuClick }: NavBarProps) {
             height={40}
           />
         </Box>
-        <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+        <Box sx={{ display: { xs: 'none', sm: 'block' }, height: 60 }}>
           {navItems.map((item) => (
-            <Button key={item.route} sx={{ color: '#fff' }} onClick={() => handleNavigation(item.route)}>
-              {item.title}
+            <Button key={item.route} sx={{ color: '#fff', height: "100%" }} onClick={() => handleNavigation(item.route)}>
+              <Typography fontSize={12}>{item.title}</Typography>
             </Button>
           ))}
         </Box>
