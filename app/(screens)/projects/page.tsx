@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Button } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import React from 'react';
 import theme from '@/app/theme/theme';
 
@@ -8,14 +8,18 @@ const ProjectsPage = () => {
 
   return (
     <Box sx={{ marginBottom: 2 }}>
-      <h1>Projects</h1>
-      <p>This is the Projects page.</p>
-
-      <Button variant='contained'>Primary color</Button>
-      <Button variant='contained' sx={{ backgroundColor: theme.palette.secondary.main }}>Secondary color</Button>
-      <Button variant='contained' sx={{ backgroundColor: theme.palette.error.main }}>Red color</Button>
-      <Button variant='contained' sx={{ backgroundColor: theme.palette.grey[500] }}>Gray color</Button>
-
+      <Typography>
+        Nos complace ofrecerle una amplia gama de
+        propiedades exclusivas y servicios
+        personalizados para satisfacer todas sus
+        necesidades inmobiliarias. Nuestra misión es
+        ayudarle a encontrar la casa de sus sueños o la
+        inversión perfecta, con el respaldo de nuestro
+        equipo de expertos comprometidos con la
+        excelencia y la transparencia. Descubra cómo
+        podemos hacer realidad sus aspiraciones
+        inmobiliarias.
+      </Typography>
     </Box>
   );
 };
