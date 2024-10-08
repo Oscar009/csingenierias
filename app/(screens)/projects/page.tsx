@@ -6,9 +6,7 @@ import React from 'react';
 const ProjectsPage = () => {
   return (
     <Grid2 container spacing={2} sx={{ paddingInline: 5, paddingBlock: 3 }}>
-      {/* Fila que contiene las dos columnas */}
       <Grid2 container size={{ xs: 12 }} spacing={2}>
-        {/* Primera columna */}
         <Grid2 size={{ xs: 12, sm: 12, md: 6 }}>
           <Typography fontFamily={'inherit'}>
             Nos complace ofrecerle una amplia gama de propiedades exclusivas y servicios
@@ -19,7 +17,12 @@ const ProjectsPage = () => {
           </Typography>
         </Grid2>
 
-        {/* Segunda columna */}
+        <Grid2 size={{ xs: 12, sm: 12, md: 6 }}>
+          {"FOTO de empresa"}
+        </Grid2>
+      </Grid2>
+
+      <Grid2 container size={{ xs: 12 }} spacing={2}>
         <Grid2 size={{ xs: 12, sm: 12, md: 6 }}>
           <Typography fontFamily={'inherit'}>
             Nos complace ofrecerle una amplia gama de propiedades exclusivas y servicios
@@ -28,6 +31,10 @@ const ProjectsPage = () => {
             de nuestro equipo de expertos comprometidos con la excelencia y la transparencia.
             Descubra cómo podemos hacer realidad sus aspiraciones inmobiliarias.
           </Typography>
+        </Grid2>
+
+        <Grid2 size={{ xs: 12, sm: 12, md: 6 }}>
+          {"FOTO de empresa"}
         </Grid2>
       </Grid2>
     </Grid2>
