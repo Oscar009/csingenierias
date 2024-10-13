@@ -20,7 +20,7 @@ export const FooterComponent = () => {
             {/* Correo electrónico */}
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <EmailIcon />
-              <Typography sx={{ marginInline: 1 }}>info@tuempresa.com</Typography>
+              <Typography sx={{ marginInline: 1 }}>csingenierias.ventas00@gmail.com</Typography>
             </Box>
             {/* Teléfono */}
             <Box sx={{ display: "flex", alignItems: "center" }}>
