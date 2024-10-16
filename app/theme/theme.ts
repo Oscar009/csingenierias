@@ -1,4 +1,5 @@
 import { createTheme } from '@mui/material/styles';
+import '@fontsource/bebas-neue';
 
 const theme = createTheme({
   palette: {
@@ -12,6 +13,9 @@ const theme = createTheme({
       main: '#942727',
     },
   },
+  typography:{
+    fontFamily: 'Bebas Neue, Arial, sans-serif',
+  }
 });
 
 export default theme;

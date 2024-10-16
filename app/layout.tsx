@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import ClientThemeProvider from './theme/clientThemeProvider';
 import DrawerAppBar from './components/AppBar/DrawerAppBar';
+import { FooterComponent } from './components/Footer/Footer';
 
 export const metadata = {
   title: 'Inmobiliaria CS Ingenierías y asociados',
@@ -14,6 +15,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <ClientThemeProvider>
           <DrawerAppBar />
           {children}
+          <FooterComponent />
         </ClientThemeProvider>
       </body>
     </html>
