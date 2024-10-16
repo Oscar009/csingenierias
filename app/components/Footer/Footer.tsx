@@ -2,7 +2,6 @@ import { Box, Grid2, Typography } from '@mui/material'
 import React from 'react'
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import CopyrightIcon from '@mui/icons-material/Copyright';
 import Link from 'next/link';
 import theme from '@/app/theme/theme';
 import EmailIcon from '@mui/icons-material/Email';

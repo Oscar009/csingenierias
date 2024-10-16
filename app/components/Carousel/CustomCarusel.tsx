@@ -5,7 +5,7 @@ import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
 import Image from 'next/image';
 
 // Definición de tipos para los items del carrusel
-interface CarouselItem {
+export interface CarouselItem {
   src: string;
   altText: string;
   caption: string;
@@ -13,20 +13,20 @@ interface CarouselItem {
 
 const items: CarouselItem[] = [
   {
-    src: '/assets/img/logo_blanco.png',
+    src: '/assets/images/projects/image1.jpeg',
     altText: 'Slide 1',
-    caption: 'Slide 1 Caption'
+    caption: 'Slide 1 Caption',
   },
   {
-    src: '/assets/img/logo_blanco.png',
+    src: '/assets/images/projects/image2.jpeg',
     altText: 'Slide 2',
-    caption: 'Slide 2 Caption'
+    caption: 'Slide 2 Caption',
   },
   {
-    src: '/assets/img/logo_blanco.png',
+    src: '/assets/images/projects/image3.jpeg',
     altText: 'Slide 3',
-    caption: 'Slide 3 Caption'
-  }
+    caption: 'Slide 3 Caption',
+  },
 ];
 
 const CustomCarousel: React.FC = () => {
@@ -76,7 +76,12 @@ const CustomCarousel: React.FC = () => {
           },
         }}
       >
-        <ArrowBackIos />
+        <ArrowBackIos
+          sx={{
+            marginLeft: '3px',
+            paddingLeft: '3px',
+          }}
+        />
       </IconButton>
 
       <IconButton
@@ -93,7 +98,12 @@ const CustomCarousel: React.FC = () => {
           },
         }}
       >
-        <ArrowForwardIos />
+        <ArrowForwardIos
+          sx={{
+            marginLeft: '1px',
+            paddingLeft: '3px',
+          }}
+        />
       </IconButton>
 
       <Paper
