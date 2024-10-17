@@ -11,51 +11,37 @@ export interface CarouselItem {
   caption: string;
 }
 
-const items: CarouselItem[] = [
-  {
-    src: '/assets/images/projects/image1.jpeg',
-    altText: 'Slide 1',
-    caption: 'Slide 1 Caption',
-  },
-  {
-    src: '/assets/images/projects/image2.jpeg',
-    altText: 'Slide 2',
-    caption: 'Slide 2 Caption',
-  },
-  {
-    src: '/assets/images/projects/image3.jpeg',
-    altText: 'Slide 3',
-    caption: 'Slide 3 Caption',
-  },
-];
+interface CustomCarouselProps {
+  photos: CarouselItem[];
+}
 
-const CustomCarousel: React.FC = () => {
+const CustomCarousel = ({ photos }: CustomCarouselProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const nextSlide = (): void => {
-    setActiveIndex((prevIndex) => (prevIndex + 1) % items.length);
+    setActiveIndex((prevIndex) => (prevIndex + 1) % photos.length);
   };
 
   const prevSlide = (): void => {
-    setActiveIndex((prevIndex) => (prevIndex === 0 ? items.length - 1 : prevIndex - 1));
+    setActiveIndex((prevIndex) => (prevIndex === 0 ? photos.length - 1 : prevIndex - 1));
   };
 
   return (
-    <Box position="relative" width="100%" maxWidth="600px" margin="auto" overflow="hidden">
-      {items.map((item, index) => (
+    <Box position="relative" width="100%" maxWidth="1800px" margin="auto" overflow="hidden">
+      {photos.map((item, index) => (
         <Box
           key={index}
           display={activeIndex === index ? 'block' : 'none'}
           position="relative"
           width="100%"
-          height="400px" // Ajusta la altura como desees
+          height={{ xs: '50vh', sm: '60vh', md: '70vh', lg: '80vh' }} // Altura flexible según el viewport
         >
           {activeIndex === index && (
             <Image
               src={item.src}
               alt={item.altText}
-              layout="fill" // Hace que la imagen llene el contenedor
-              objectFit="cover" // Ajusta cómo se adapta la imagen
+              layout="fill" // La imagen llena el contenedor
+              objectFit="cover" // Mantiene la imagen dentro del contenedor sin deformarse
               priority={index === activeIndex} // Prioriza la carga de la imagen actual
             />
           )}
@@ -117,7 +103,7 @@ const CustomCarousel: React.FC = () => {
           color: 'white',
         }}
       >
-        <Typography variant="h6">{items[activeIndex].caption}</Typography>
+        <Typography variant="h6" textAlign="center">{photos[activeIndex].caption}</Typography>
       </Paper>
     </Box>
   );

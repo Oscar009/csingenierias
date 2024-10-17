@@ -1,30 +1,13 @@
 'use client';
 
-import { Divider, Grid2, Typography } from '@mui/material';
+import { Grid2, Typography } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
 import logo from "../../assets/img/logo_negro.jpeg";
-import theme from "../../theme/theme";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import CustomCarousel, { CarouselItem } from '@/app/components/Carousel/CustomCarusel';
-
-const itemsLosFresnos: CarouselItem[] = [
-  {
-    src: '/assets/images/projects/image1.jpeg',
-    altText: 'Slide 1',
-    caption: 'Slide 1 Caption',
-  },
-  {
-    src: '/assets/images/projects/image2.jpeg',
-    altText: 'Slide 2',
-    caption: 'Slide 2 Caption',
-  },
-  {
-    src: '/assets/images/projects/image3.jpeg',
-    altText: 'Slide 3',
-    caption: 'Slide 3 Caption',
-  },
-];
+import CustomCarousel from '@/app/components/Carousel/CustomCarusel';
+import { CustomDivider } from '@/app/components/CustomDivider/CustomDivider';
+import { itemsLosFresnos } from './photos/losfresnos';
 
 const ProjectsPage = () => {
   return (
@@ -32,7 +15,7 @@ const ProjectsPage = () => {
       <Grid2 container size={{ xs: 12 }} spacing={2}>
         <Grid2 size={{ xs: 12, sm: 12, md: 6 }}>
           <Typography variant="h5">Bienvenida</Typography>
-          <Divider sx={{ marginBlock: 1, border: 1, color: theme.palette.primary.main }} />
+          <CustomDivider />
           <Typography fontFamily={'unset'}>
             Nos complace ofrecerle una amplia gama de propiedades exclusivas y servicios
             personalizados para satisfacer todas sus necesidades inmobiliarias. Nuestra misión
@@ -55,12 +38,12 @@ const ProjectsPage = () => {
         </Grid2>
       </Grid2>
 
-      <Grid2 container size={{ xs: 12 }} spacing={2}>
+      <Grid2 container size={{ xs: 12 }} spacing={2} marginTop={5}>
         <Grid2 size={{ xs: 12, sm: 12, md: 12 }}>
           <Typography variant='h3' fontFamily={'inherit'}>
             {"Proyectos"}
           </Typography>
-          <Divider sx={{ marginBlock: 1, border: 1, color: theme.palette.primary.main }} />
+          <CustomDivider />
         </Grid2>
       </Grid2>
 
@@ -74,7 +57,7 @@ const ProjectsPage = () => {
           </Typography>
           <Typography variant='h6'>
             {"Fraccionamiento residencial"}
-            <LocationOnIcon fontSize='small' />
+            <LocationOnIcon fontSize='small' color={"error"} />
             {"Ixtlahuacán Del Río"}
           </Typography>
           <Typography variant='body1'>
@@ -83,10 +66,30 @@ const ProjectsPage = () => {
         </Grid2>
 
         <Grid2 size={{ xs: 12, sm: 12, md: 6 }}>
-          {/* <CustomCarousel myItems={itemsLosFresnos} height='600px' width='800px' /> */}
-          <CustomCarousel />
+          <CustomCarousel photos={itemsLosFresnos} />
         </Grid2>
       </Grid2>
+
+      <Grid2 container size={{ xs: 12 }} spacing={2}>
+        <Grid2 size={{ xs: 12, sm: 12, md: 6 }}>
+          <Typography variant='h5'>
+            {"Introducción"}
+          </Typography>
+          <Typography variant='body1'>
+            {"El municipio de ixtlahuacan del Rio, denoominado tambien como pueblo magico se encuentra a 45 min de Guadalajara, JAL. El cual se destaca por su tranquilidad, amabilidad de su gente y excelente ubiciacion para estar cerca de la ciudad de Guadalajara y el estado de Zacatecas. El fraccionamiento Los Fresnos, se ubica dentro del pueblo a 5 min. Del centro, pero justo a las orillas de el, donde puedes disfrutar de una hermosa vista a la naturaleza en un terreno seguro y apto para poder vivir y desarrollar tus proyectos."}
+          </Typography>
+        </Grid2>
+
+        <Grid2 size={{ xs: 12, sm: 12, md: 6 }}>
+        <Typography variant='h5'>
+            {"Etapas de construcción"}
+          </Typography>
+          <Typography variant='body1'>
+            {"El proyecto urbanístico general donde se incluyen: planos topográficos, de rasantes, de instalaciones, de solución vial y sembrado de vivienda tipo , están ya integrados en el expediente que ya está ingresado en el ayuntamiento. También están todos los planos constructivos de la casa tipo que a continuación de enumeran: planos arquitectónicos, de secciones y acabados, estructurales, de instalaciones como la sanitaria, hidráulica, eléctrica y de gas están integrados en expediente mencionado, así como la documentación complementaria correspondiente."}
+          </Typography>
+        </Grid2>
+      </Grid2>
+
     </Grid2>
   );
 };
