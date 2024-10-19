@@ -24,7 +24,7 @@ export const FooterComponent = () => {
             {/* Teléfono */}
             <Box sx={{ display: "flex", alignItems: "center" }} style={{ userSelect: 'none' }}>
               <LocalPhoneIcon />
-              <Typography sx={{ marginInline: 1 }}>{"33 3118 9341"}</Typography>
+              <Typography sx={{ marginInline: 1 }}><span>33</span> <span>3118</span> <span>9341</span></Typography>
             </Box>
             {/* Localización */}
             <Box sx={{ display: "flex", alignItems: "center" }}>
