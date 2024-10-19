@@ -41,7 +41,8 @@ const CustomCarousel = ({ photos }: CustomCarouselProps) => {
               src={item.src}
               alt={item.altText}
               layout="fill" // La imagen llena el contenedor
-              objectFit="cover" // Mantiene la imagen dentro del contenedor sin deformarse
+              // objectFit="container"
+              objectFit="cover"
               priority={index === activeIndex} // Prioriza la carga de la imagen actual
             />
           )}
