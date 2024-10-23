@@ -37,14 +37,27 @@ const CustomCarousel = ({ photos }: CustomCarouselProps) => {
           height={{ xs: '50vh', sm: '60vh', md: '70vh', lg: '80vh' }} // Altura flexible según el viewport
         >
           {activeIndex === index && (
-            <Image
-              src={item.src}
-              alt={item.altText}
-              layout="fill" // La imagen llena el contenedor
-              // objectFit="container"
-              objectFit="cover"
-              priority={index === activeIndex} // Prioriza la carga de la imagen actual
-            />
+            <Box
+              position="relative"
+              width="100%"
+              height="100%"
+              sx={{
+                // Evita la deformación de imágenes verticales o muy anchas
+                '& img': {
+                  objectFit: 'contain',
+                  width: '100%',
+                  height: '100%',
+                },
+              }}
+            >
+              <Image
+                src={item.src}
+                alt={item.altText}
+                layout="fill" // La imagen ocupa todo el contenedor
+                objectFit="contain" // Evita la deformación, muestra la imagen entera
+                priority={index === activeIndex} // Prioriza la carga de la imagen actual
+              />
+            </Box>
           )}
         </Box>
       ))}
@@ -63,12 +76,7 @@ const CustomCarousel = ({ photos }: CustomCarouselProps) => {
           },
         }}
       >
-        <ArrowBackIos
-          sx={{
-            marginLeft: '3px',
-            paddingLeft: '3px',
-          }}
-        />
+        <ArrowBackIos sx={{ marginLeft: '3px', paddingLeft: '3px' }} />
       </IconButton>
 
       <IconButton
@@ -85,12 +93,7 @@ const CustomCarousel = ({ photos }: CustomCarouselProps) => {
           },
         }}
       >
-        <ArrowForwardIos
-          sx={{
-            marginLeft: '1px',
-            paddingLeft: '3px',
-          }}
-        />
+        <ArrowForwardIos sx={{ marginLeft: '1px', paddingLeft: '3px' }} />
       </IconButton>
 
       <Paper
@@ -104,7 +107,9 @@ const CustomCarousel = ({ photos }: CustomCarouselProps) => {
           color: 'white',
         }}
       >
-        <Typography variant="h6" textAlign="center">{photos[activeIndex].caption}</Typography>
+        <Typography variant="h6" textAlign="center">
+          {photos[activeIndex].caption}
+        </Typography>
       </Paper>
     </Box>
   );
