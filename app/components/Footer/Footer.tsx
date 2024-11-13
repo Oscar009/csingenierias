@@ -2,7 +2,6 @@ import { Box, Grid2, Typography } from '@mui/material'
 import React from 'react'
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import CopyrightIcon from '@mui/icons-material/Copyright';
 import Link from 'next/link';
 import theme from '@/app/theme/theme';
 import EmailIcon from '@mui/icons-material/Email';
@@ -23,9 +22,9 @@ export const FooterComponent = () => {
               <Typography sx={{ marginInline: 1 }}>csingenierias.ventas00@gmail.com</Typography>
             </Box>
             {/* Teléfono */}
-            <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Box sx={{ display: "flex", alignItems: "center" }} style={{ userSelect: 'none' }}>
               <LocalPhoneIcon />
-              <Typography sx={{ marginInline: 1 }}>33 3118 9341</Typography>
+              <Typography sx={{ marginInline: 1 }}><span>33</span> <span>3118</span> <span>9341</span></Typography>
             </Box>
             {/* Localización */}
             <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -35,12 +34,11 @@ export const FooterComponent = () => {
           </Box>
         </Grid2>
 
-
         {/* Segunda columna: Redes sociales */}
         <Grid2 size={{ xs: 12, md: 6 }}>
           <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}>
             <Typography variant="h6" gutterBottom>
-              ¡Síguenos en nuestras redes sociales!
+              {"¡Síguenos en nuestras redes sociales!"}
             </Typography>
             <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
               <Link
@@ -82,7 +80,7 @@ export const FooterComponent = () => {
       {/* Footer copyright */}
       <Box width={"100%"} marginTop={5}>
         <Typography fontSize={15} align="center">
-          Todos los derechos reservados © 2024
+          {"Todos los derechos reservados © 2024"}
         </Typography>
       </Box>
     </Box>
