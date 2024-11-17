@@ -8,8 +8,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 // Definir los tipos de datos del formulario
 interface IFormInput {
   name: string;
-  email?: string | null;
-  phone_number?: string | null;
+  email: string;
   message: string;
 }
 
@@ -18,17 +17,9 @@ const schema = yup.object().shape({
   name: yup.string().required('El nombre es requerido'),
   email: yup
     .string()
-    .email('El correo no es válido')
-    .nullable()
-    .notRequired(),
-  phone_number: yup
-    .string()
-    .matches(/^\d{10}$/, 'El teléfono debe tener 10 dígitos')
-    .nullable()
-    .notRequired(),
+    .required('El correo es requerido')
+    .email('El correo no es válido'),
   message: yup.string().required('El mensaje es requerido'),
-}).test('correo-o-telefono', 'Debe ingresar un correo electrónico o un teléfono', (values) => {
-  return !!(values.email || values.phone_number); // Condición: al menos uno debe estar presente
 });
 
 const CustomForm: React.FC = () => {
@@ -42,6 +33,7 @@ const CustomForm: React.FC = () => {
 
   const onSubmit = (data: IFormInput) => {
     console.log('Datos enviados:', data);
+    //todo: clear form
   };
 
   return (
@@ -55,6 +47,8 @@ const CustomForm: React.FC = () => {
             render={({ field }) => (
               <TextField
                 {...field}
+                size="small"
+                variant='filled'
                 label="Nombre"
                 fullWidth
                 error={!!errors.name}
@@ -72,27 +66,12 @@ const CustomForm: React.FC = () => {
             render={({ field }) => (
               <TextField
                 {...field}
+                size="small"
+                variant='filled'
                 label="Correo Electrónico"
                 fullWidth
                 error={!!errors.email}
                 helperText={errors.email?.message}
-              />
-            )}
-          />
-        </Grid2>
-
-        {/* Campo de Teléfono (opcional) */}
-        <Grid2 size={{ xs: 12 }}>
-          <Controller
-            name="phone_number"
-            control={control}
-            render={({ field }) => (
-              <TextField
-                {...field}
-                label="Teléfono"
-                fullWidth
-                error={!!errors.phone_number}
-                helperText={errors.phone_number?.message}
               />
             )}
           />
@@ -106,6 +85,8 @@ const CustomForm: React.FC = () => {
             render={({ field }) => (
               <TextField
                 {...field}
+                size="small"
+                variant='filled'
                 label="Mensaje"
                 fullWidth
                 multiline

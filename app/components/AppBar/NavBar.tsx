@@ -43,7 +43,7 @@ export default function NavBar({ navItems, onMenuClick }: NavBarProps) {
         <Box sx={{ display: { xs: 'none', sm: 'block' }, height: 60 }}>
           {navItems.map((item) => (
             <Button key={item.route} sx={{ color: '#fff', height: "100%" }} onClick={() => handleNavigation(item.route)}>
-              <Typography fontSize={12}>{item.title}</Typography>
+              <Typography variant="body1">{item.title}</Typography>
             </Button>
           ))}
         </Box>
