@@ -32,6 +32,7 @@ const CustomForm: React.FC = () => {
     handleSubmit,
     formState: { errors },
     reset,
+    setValue,
   } = useForm<IFormInput>({
     resolver: yupResolver(schema),
   });
@@ -52,6 +53,9 @@ const CustomForm: React.FC = () => {
       if (response.success) {
         setStatusMessage("Correo enviado exitosamente.");
         reset(); // Limpia el formulario
+        setValue("email", "");
+        setValue("message", "");
+        setValue("name", "");
       } else {
         setStatusMessage(`Error: ${response.message}`);
       }
