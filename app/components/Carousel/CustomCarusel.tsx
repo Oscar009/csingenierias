@@ -56,6 +56,8 @@ const CustomCarousel = ({ photos }: CustomCarouselProps) => {
                 layout="fill" // La imagen ocupa todo el contenedor
                 objectFit="contain" // Evita la deformación, muestra la imagen entera
                 priority={index === activeIndex} // Prioriza la carga de la imagen actual
+                placeholder="blur"
+                blurDataURL={item.src}
               />
             </Box>
           )}
