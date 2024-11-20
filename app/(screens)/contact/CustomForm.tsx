@@ -1,9 +1,10 @@
 "use client";
-import React from 'react';
-import { useForm, Controller } from 'react-hook-form';
-import { TextField, Button, Grid2 } from '@mui/material';
-import * as yup from 'yup';
-import { yupResolver } from '@hookform/resolvers/yup';
+import React, { useState } from "react";
+import { useForm, Controller } from "react-hook-form";
+import { TextField, Button, Typography, Grid2 } from "@mui/material";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { sendEmail } from "./services/emailService";
 
 // Definir los tipos de datos del formulario
 interface IFormInput {
@@ -14,26 +15,52 @@ interface IFormInput {
 
 // Esquema de validación de Yup
 const schema = yup.object().shape({
-  name: yup.string().required('El nombre es requerido'),
+  name: yup.string().required("El nombre es requerido"),
   email: yup
     .string()
-    .required('El correo es requerido')
-    .email('El correo no es válido'),
-  message: yup.string().required('El mensaje es requerido'),
+    .required("El correo es requerido")
+    .email("El correo no es válido"),
+  message: yup.string().required("El mensaje es requerido"),
 });
 
 const CustomForm: React.FC = () => {
+  const [statusMessage, setStatusMessage] = useState<string>(""); // Para mostrar el estado
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false); // Para deshabilitar el botón mientras se envía
+
   const {
     control,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<IFormInput>({
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data: IFormInput) => {
-    console.log('Datos enviados:', data);
-    //todo: clear form
+  const onSubmit = async (data: IFormInput) => {
+    setIsSubmitting(true); // Deshabilitar botón de enviar
+    setStatusMessage(""); // Resetear el mensaje de estado
+  
+    try {
+      // Llama al servicio tipado `sendEmail` con los datos del formulario
+      const response = await sendEmail({
+        email: "oortizbarba@gmail.com", // Correo de destino
+        subject: `Nuevo mensaje de ${data.name}`, // Asunto con nombre del remitente
+        message: data.message, // Mensaje del formulario
+      });
+  
+      // Maneja la respuesta según el estado de éxito o error
+      if (response.success) {
+        setStatusMessage("Correo enviado exitosamente.");
+        reset(); // Limpia el formulario
+      } else {
+        setStatusMessage(`Error: ${response.message}`);
+      }
+    } catch (error) {
+      console.error("Error al enviar el correo:", error);
+      setStatusMessage("Ocurrió un error al intentar enviar el correo.");
+    } finally {
+      setIsSubmitting(false); // Rehabilita el botón de enviar
+    }
   };
 
   return (
@@ -48,7 +75,7 @@ const CustomForm: React.FC = () => {
               <TextField
                 {...field}
                 size="small"
-                variant='filled'
+                variant="filled"
                 label="Nombre"
                 fullWidth
                 error={!!errors.name}
@@ -58,7 +85,7 @@ const CustomForm: React.FC = () => {
           />
         </Grid2>
 
-        {/* Campo de Correo Electrónico (opcional) */}
+        {/* Campo de Correo Electrónico */}
         <Grid2 size={{ xs: 12 }}>
           <Controller
             name="email"
@@ -67,7 +94,7 @@ const CustomForm: React.FC = () => {
               <TextField
                 {...field}
                 size="small"
-                variant='filled'
+                variant="filled"
                 label="Correo Electrónico"
                 fullWidth
                 error={!!errors.email}
@@ -86,7 +113,7 @@ const CustomForm: React.FC = () => {
               <TextField
                 {...field}
                 size="small"
-                variant='filled'
+                variant="filled"
                 label="Mensaje"
                 fullWidth
                 multiline
@@ -100,10 +127,28 @@ const CustomForm: React.FC = () => {
 
         {/* Botón de Enviar */}
         <Grid2 size={{ xs: 12 }}>
-          <Button type="submit" variant="contained" color="primary" fullWidth>
-            Enviar
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            fullWidth
+            disabled={isSubmitting} // Deshabilitar mientras se envía
+          >
+            {isSubmitting ? "Enviando..." : "Enviar"}
           </Button>
         </Grid2>
+
+        {/* Mensaje de estado */}
+        {statusMessage && (
+          <Grid2 size={{ xs: 12 }}>
+            <Typography
+              variant="body2"
+              color={statusMessage.includes("Error") ? "error" : "success"}
+            >
+              {statusMessage}
+            </Typography>
+          </Grid2>
+        )}
       </Grid2>
     </form>
   );

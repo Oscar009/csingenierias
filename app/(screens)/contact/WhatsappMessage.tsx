@@ -5,7 +5,14 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 export const WhatsappMessage = () => {
   const handleSendMessage = () => {
-    const encodedMessage = encodeURIComponent('Hola esto es un mensaje predeterminado!');
+    const encodedMessage = encodeURIComponent(`¡Hola, buen día! 👋
+      Estaba revisando su página web y me interesa obtener más información sobre [mencionar el proyecto o propiedad específica que te interese, por ejemplo: "la casa en venta en el sector X" o "el desarrollo de departamentos en zona Y"].
+      
+      Mi objetivo es [explicar brevemente el objetivo, por ejemplo: "adquirir una propiedad para inversión" o "encontrar mi primera casa"].
+      
+      Mi presupuesto aproximado es [indicar un rango o cantidad].
+      
+      Quedo atento a la información y opciones disponibles. ¡Gracias! 😊`);
     const whatsappUrl = `https://wa.me/523329501713?text=${encodedMessage}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -34,7 +41,7 @@ export const WhatsappMessage = () => {
           textTransform: 'none',
           padding: '10px 20px',
           width: "80%",
-          alignSelf:"center"
+          alignSelf: "center"
         }}
       >
         Enviar Mensaje
