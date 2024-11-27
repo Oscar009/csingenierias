@@ -2,54 +2,70 @@ import { CarouselItem } from "@/app/components/Carousel/CustomCarusel";
 
 export const itemsMazamitla: CarouselItem[] = [
   {
-    src: '/assets/images/projects/mazamitla/1_CASA_DE_CAMPO_MAZAMITLA.jpeg',
+    src: '/assets/images/projects/mazamitla/M1.jpg',
     altText: '',
     caption: '',
   },
   {
-    src: '/assets/images/projects/mazamitla/2_DEPARTAMENTOS_MAZAMITLA_.jpeg',
+    src: '/assets/images/projects/mazamitla/M2.jpg',
     altText: '',
     caption: '',
   },
   {
-    src: '/assets/images/projects/mazamitla/3_REDNER_VALLE_DE_JUAREZ.jpeg',
+    src: '/assets/images/projects/mazamitla/M3.jpg',
     altText: '',
     caption: '',
   },
   {
-    src: '/assets/images/projects/mazamitla/4_PLANO_CASA_DE_CAMPO.jpeg',
+    src: '/assets/images/projects/mazamitla/M4.jpg',
     altText: '',
     caption: '',
   },
   {
-    src: '/assets/images/projects/mazamitla/5_PLANOS_DEPARTAMENTOS_MAZAMITLA.jpeg',
+    src: '/assets/images/projects/mazamitla/M5.jpg',
     altText: '',
     caption: '',
   },
   {
-    src: '/assets/images/projects/mazamitla/img1.jpeg',
+    src: '/assets/images/projects/mazamitla/M6.jpg',
     altText: '',
     caption: '',
   },
   {
-    src: '/assets/images/projects/mazamitla/img2.jpeg',
+    src: '/assets/images/projects/mazamitla/M7.jpg',
     altText: '',
     caption: '',
   },
   {
-    src: '/assets/images/projects/mazamitla/img3.jpeg',
+    src: '/assets/images/projects/mazamitla/M8.jpg',
     altText: '',
     caption: '',
   },
   {
-    src: '/assets/images/projects/mazamitla/img4.jpeg',
+    src: '/assets/images/projects/mazamitla/M9.jpg',
     altText: '',
     caption: '',
   },
   {
-    src: '/assets/images/projects/mazamitla/img5.jpeg',
+    src: '/assets/images/projects/mazamitla/M10.jpg',
+    altText: '',
+    caption: '',
+  },
+  {
+    src: '/assets/images/projects/mazamitla/M11.jpg',
+    altText: '',
+    caption: '',
+  },
+  {
+    src: '/assets/images/projects/mazamitla/M12.jpg',
+    altText: '',
+    caption: '',
+  },
+  {
+    src: '/assets/images/projects/mazamitla/M13.jpg',
     altText: '',
     caption: '',
   },
 ];
+
 
