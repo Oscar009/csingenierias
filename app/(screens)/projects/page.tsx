@@ -1,6 +1,6 @@
 'use client';
 
-import { Grid2, Typography } from '@mui/material';
+import { Button, Grid2, Typography } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
 import logo from "../../assets/img/logo_negro.jpeg";
@@ -13,6 +13,22 @@ import { CustomTitle } from '@/app/components/Titles/CustomTitle/CustomTitle';
 import { itemsMazamitla } from './photos/mazamitla';
 
 const ProjectsPage = () => {
+
+  const handleOpenMapsIxtlahuacan = () => {
+    const googleMapsUrl = `https://www.google.com/maps/@20.8658432,-103.2311668,3a,74.999992y,330.829102h,78.289917t/data=!3m4!1e1!3m2!1sqp_jQGv_Leii8k18dFhkoA!2e0?lucs=,94242499,94224825,94227247,94227248,47071704,47069508,94218641,94233073,94203019,47084304,94208458,94208447,94213316&g_ep=CAISDTYuMTQwLjAuOTEzNzAYACCBgQEqdSw5NDI0MjQ5OSw5NDIyNDgyNSw5NDIyNzI0Nyw5NDIyNzI0OCw0NzA3MTcwNCw0NzA2OTUwOCw5NDIxODY0MSw5NDIzMzA3Myw5NDIwMzAxOSw0NzA4NDMwNCw5NDIwODQ1OCw5NDIwODQ0Nyw5NDIxMzMxNkICTVg%3D&g_st=iwb`;
+    window.open(googleMapsUrl, '_blank');
+  }
+
+  const handleOpenMapsMazamitla = () => {
+    const googleMapsUrl = `https://www.google.com/maps/place/19%C2%B056'17.4%22N+102%C2%B059'16.3%22W/@19.9381667,-102.9878611,17z/data=!3m1!4b1!4m4!3m3!8m2!3d19.9381667!4d-102.9878611?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D`;
+    window.open(googleMapsUrl, '_blank');
+  }
+
+  const handleOpenMapsLosCabos = () => {
+    const googleMapsUrl = `https://www.google.com/maps/place//@22.8927917,-109.9465446,17z?entry=tts&g_ep=EgoyMDI0MTExNy4wIPu8ASoASAFQAw%3D%3D`;
+    window.open(googleMapsUrl, '_blank');
+  }
+
   return (
     <Grid2 container spacing={2} sx={{ paddingInline: 5, paddingBlock: 3 }}>
       <Grid2 container size={{ xs: 12 }} spacing={2}>
@@ -55,7 +71,17 @@ const ProjectsPage = () => {
           <Typography variant='h4'>
             {"Los Fresnos"}
           </Typography>
-          <Typography variant='body1'>
+          <Typography
+            variant='body1'
+            onClick={handleOpenMapsIxtlahuacan}
+            sx={{
+              cursor: "pointer",
+              padding: 1,
+              border: "1px solid",
+              borderColor: "primary",
+              borderRadius: 1,
+            }}
+          >
             {"Fraccionamiento residencial"}
             <LocationOnIcon fontSize='small' color={"error"} />
             {"Ixtlahuacán Del Río"}
@@ -91,7 +117,17 @@ const ProjectsPage = () => {
           <Typography variant='h4'>
             {"Mazamitla"}
           </Typography>
-          <Typography variant='body1'>
+          <Typography
+            variant='body1'
+            onClick={handleOpenMapsMazamitla}
+            sx={{
+              cursor: "pointer",
+              padding: 1,
+              border: "1px solid",
+              borderColor: "primary",
+              borderRadius: 1,
+            }}
+          >
             {"Casas e inversiones / Epenche "}
             <LocationOnIcon fontSize='small' color={"error"} />
             {"Mazamitla, Pueblo Mágico"}
@@ -125,7 +161,17 @@ const ProjectsPage = () => {
           <Typography variant='h4'>
             {"Condominios 'Los Venados'"}
           </Typography>
-          <Typography variant='body1'>
+          <Typography
+            variant='body1'
+            onClick={handleOpenMapsLosCabos}
+            sx={{
+              cursor: "pointer",
+              padding: 1,
+              border: "1px solid",
+              borderColor: "primary",
+              borderRadius: 1,
+            }}
+          >
             {"Conjunto departamental"}
             <LocationOnIcon fontSize='small' color={"error"} />
             {"Cabo San Lucas"}
