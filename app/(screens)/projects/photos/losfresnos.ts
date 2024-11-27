@@ -2,52 +2,37 @@ import { CarouselItem } from "@/app/components/Carousel/CustomCarusel";
 
 export const itemsLosFresnos: CarouselItem[] = [
   {
-    src: '/assets/images/projects/losfresnos/1_RENDER_CASA.jpeg',
+    src: '/assets/images/projects/losfresnos/LF1.jpg',
     altText: '',
     caption: '',
   },
   {
-    src: '/assets/images/projects/losfresnos/2_RENDER_CASA_CON_SOTANO.jpeg',
+    src: '/assets/images/projects/losfresnos/LF2.jpg',
     altText: '',
     caption: '',
   },
   {
-    src: '/assets/images/projects/losfresnos/3_LOS_FRESNOS_RENDER_BASICA.jpeg',
+    src: '/assets/images/projects/losfresnos/LF3.jpg',
     altText: '',
     caption: '',
   },
   {
-    src: '/assets/images/projects/losfresnos/4_FRESNOS_PLANOS_CASAS.jpeg',
+    src: '/assets/images/projects/losfresnos/LF4.jpg',
     altText: '',
     caption: '',
   },
   {
-    src: '/assets/images/projects/losfresnos/5_FRESNOS_PLANO_BASICA.jpeg',
+    src: '/assets/images/projects/losfresnos/LF5.jpg',
     altText: '',
     caption: '',
   },
   {
-    src: '/assets/images/projects/losfresnos/FOTO_FRESNOS_(AL_FINAL).jpeg',
+    src: '/assets/images/projects/losfresnos/LF6.jpg',
     altText: '',
     caption: '',
   },
   {
-    src: '/assets/images/projects/losfresnos/FOTO_FRESNOS(AL_FINAL).jpeg',
-    altText: '',
-    caption: '',
-  },
-  {
-    src: '/assets/images/projects/losfresnos/FOTOGRAFIA_FRESNOS_(AL_FINAL).jpeg',
-    altText: '',
-    caption: '',
-  },
-  {
-    src: '/assets/images/projects/losfresnos/Los_Fresnos_(AL_FINAL).jpeg',
-    altText: '',
-    caption: '',
-  },
-  {
-    src: '/assets/images/projects/losfresnos/Los_Fresnos.jpeg',
+    src: '/assets/images/projects/losfresnos/LF7.jpg',
     altText: '',
     caption: '',
   },

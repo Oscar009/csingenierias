@@ -11,6 +11,7 @@ import { itemsLosFresnos } from './photos/losfresnos';
 import { CustomSubTitle } from '@/app/components/Titles/CustomSubTitle/CustomSubTitle';
 import { CustomTitle } from '@/app/components/Titles/CustomTitle/CustomTitle';
 import { itemsMazamitla } from './photos/mazamitla';
+import { itemsLosVenados } from './photos/losvenados';
 
 const ProjectsPage = () => {
 
@@ -185,7 +186,7 @@ const ProjectsPage = () => {
         </Grid2>
 
         <Grid2 size={{ xs: 12, sm: 12, md: 6 }}>
-          FOTOS CABO SAN LUCAS
+          <CustomCarousel photos={itemsLosVenados} />
         </Grid2>
       </Grid2>
 
