@@ -1,8 +1,10 @@
 import { ReactNode } from 'react';
-import ClientThemeProvider from './clientThemeProvider';
+import ClientThemeProvider from './theme/clientThemeProvider';
+import DrawerAppBar from './components/AppBar/DrawerAppBar';
+import { FooterComponent } from './components/Footer/Footer';
 
 export const metadata = {
-  title: 'Next.js 14 with Material-UI',
+  title: 'Inmobiliaria CS Ingenierías y asociados',
   description: 'A Next.js 14 project using Material-UI and TypeScript',
 };
 
@@ -11,8 +13,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <body>
         <ClientThemeProvider>
-          <div>Hola</div>
+          <DrawerAppBar />
           {children}
+          <FooterComponent />
         </ClientThemeProvider>
       </body>
     </html>
