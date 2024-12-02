@@ -9,7 +9,7 @@ export const CustomTitle = ({
   label,
 }: CustomTitleProps) => {
   return (
-    <Typography variant='h2' fontFamily={'inherit'}>
+    <Typography variant='h2' fontFamily={'Bebas Neue'}>
       {label}
     </Typography>
   )
