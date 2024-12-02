@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { TextField, Button, Typography, Grid2 } from "@mui/material";
 import * as yup from "yup";
@@ -40,21 +40,21 @@ const CustomForm: React.FC = () => {
   const onSubmit = async (data: IFormInput) => {
     setIsSubmitting(true); // Deshabilitar botón de enviar
     setStatusMessage(""); // Resetear el mensaje de estado
-  
+
     try {
       // Llama al servicio tipado `sendEmail` con los datos del formulario
       const response = await sendEmail({
         email: "csingenierias.ventas.00@gmail.com", // Correo de destino
-        subject: `Nuevo mensaje de ${data.name} - ${data.email}`, // Asunto con nombre del remitente
+        subject: `Sitio web - ${data.name} - ${data.email}`, // Asunto con nombre del remitente
         message: data.message, // Mensaje del formulario
       });
-  
+
       // Maneja la respuesta según el estado de éxito o error
       if (response.success) {
         setStatusMessage("Correo enviado exitosamente.");
-        reset(); // Limpia el formulario
+        reset({ message: `Hola, estaba viendo los proyectos de su página, me interesó cotizar (ingresé nombre o asunto del proyecto de su interés):` });
+        setValue("message", `Hola, estaba viendo los proyectos de su página, me interesó cotizar (ingresé nombre o asunto del proyecto de su interés):`);
         setValue("email", "");
-        setValue("message", "");
         setValue("name", "");
       } else {
         setStatusMessage(`Error: ${response.message}`);
@@ -66,6 +66,11 @@ const CustomForm: React.FC = () => {
       setIsSubmitting(false); // Rehabilita el botón de enviar
     }
   };
+
+  useEffect(() => {
+    setValue("message", `Hola, estaba viendo los proyectos de su página, me interesó cotizar (ingresé nombre o asunto del proyecto de su interés):`);
+    reset({ message: `Hola, estaba viendo los proyectos de su página, me interesó cotizar (ingresé nombre o asunto del proyecto de su interés):` });
+  }, []);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -124,6 +129,11 @@ const CustomForm: React.FC = () => {
                 rows={4}
                 error={!!errors.message}
                 helperText={errors.message?.message}
+                slotProps={{
+                  inputLabel: {
+                    shrink: true, 
+                  },
+                }}
               />
             )}
           />
