@@ -44,8 +44,8 @@ const CustomForm: React.FC = () => {
     try {
       // Llama al servicio tipado `sendEmail` con los datos del formulario
       const response = await sendEmail({
-        email: "oortizbarba@gmail.com", // Correo de destino
-        subject: `Nuevo mensaje de ${data.name}`, // Asunto con nombre del remitente
+        email: "csingenierias.ventas.00@gmail.com", // Correo de destino
+        subject: `Nuevo mensaje de ${data.name} - ${data.email}`, // Asunto con nombre del remitente
         message: data.message, // Mensaje del formulario
       });
   
