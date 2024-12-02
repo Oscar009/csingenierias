@@ -9,7 +9,7 @@ export const CustomSubTitle = ({
   label,
 }: CustomSubTitleProps) => {
   return (
-    <Typography color='primary' variant='h3' fontFamily={'inherit'}>
+    <Typography color='primary' variant='h3' fontFamily={'Bebas Neue'}>
       {label}
     </Typography>
   )

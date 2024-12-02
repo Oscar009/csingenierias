@@ -24,7 +24,7 @@ export async function POST(request: Request) {
     });
 
     const mailOptions = {
-      from: `"Mi Aplicación" <${process.env.SMTP_USER}>`,
+      from: `${process.env.SMTP_USER}`,
       to: email,
       subject: subject,
       text: message,
