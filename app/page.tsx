@@ -1,7 +1,5 @@
-'use client'
-import { useRouter } from 'next/navigation';
+import { Typography } from "@mui/material";
 
 export default function Home() {
-  const router = useRouter();
-  return router.push('/projects')
+  <Typography>{"Inicio - presentación"}</Typography>
 }
