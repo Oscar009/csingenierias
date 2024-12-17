@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
 
 export default function Home() {
-  <Typography>{"Inicio - presentación"}</Typography>
+  <Typography sx={{ paddingInline: 5, paddingBlock: 3 }}>{"Inicio - presentación"}</Typography>
 }

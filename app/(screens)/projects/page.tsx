@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, Grid2, Typography } from '@mui/material';
+import { Grid2, Typography } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
 import logo from "../../assets/img/logo_negro.jpeg";
