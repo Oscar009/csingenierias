@@ -38,6 +38,7 @@ export default function DrawerAppBar() {
             display: { xs: 'block', sm: 'none' },
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
           }}
+          anchor="right"
         >
           <NavDrawer navItems={navItems} onClose={handleDrawerToggle} />
         </Drawer>

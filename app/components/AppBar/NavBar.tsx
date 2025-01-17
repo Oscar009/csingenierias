@@ -1,6 +1,6 @@
 'use client'; // Esto asegura que se renderiza solo en el cliente
 
-import { AppBar, Box, Button, Divider, IconButton, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Button, IconButton, Toolbar, Typography } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import { useRouter } from 'next/navigation'; // Reemplaza con la versión correcta del hook en App Router
 import { NavItem } from "@/app/interfaces/AppBar";
@@ -20,17 +20,9 @@ export default function NavBar({ navItems, onMenuClick }: NavBarProps) {
   };
 
   return (
-    <AppBar component="nav" sx={{ paddingX: { sm: 4 } }}>
-      <Toolbar sx={{ justifyContent: 'space-around', display: 'flex' }}>
-        <IconButton
-          color="inherit"
-          aria-label="open drawer"
-          edge="start"
-          onClick={onMenuClick}
-          sx={{ mr: 2, display: { sm: 'none' } }}
-        >
-          <MenuIcon />
-        </IconButton>
+    <AppBar component="nav" sx={{ boxShadow: 'none' }}>
+      <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+        {/* Contenedor del logo (para pantallas grandes) */}
         <Box
           onClick={() => router.push('/projects')}
           sx={{
@@ -47,12 +39,36 @@ export default function NavBar({ navItems, onMenuClick }: NavBarProps) {
             height={40}
           />
         </Box>
-        <Box sx={{ display: { xs: 'none', sm: 'block' }, height: 80 }}>
+
+        {/* Botón de menú (solo en pantallas móviles) */}
+        <IconButton
+          color="inherit"
+          aria-label="open drawer"
+          edge="start"
+          onClick={onMenuClick}
+          sx={{ mr: 2, display: { sm: 'none' } }} // Mostrar solo en pantallas pequeñas
+        >
+          <MenuIcon />
+        </IconButton>
+
+        {/* Contenedor de los botones de navegación */}
+        <Box
+          sx={{
+            display: { xs: 'none', sm: 'flex' }, // Mostrar solo en pantallas grandes
+            justifyContent: 'space-around', // Espacio alrededor de los navItems en pantallas grandes
+            alignItems: 'center',
+            height: 80,
+            width: 'auto', // Asegura que se ajuste el tamaño a los elementos
+          }}
+        >
           {navItems.map((item) => (
-            <Button key={item.route}
+            <Button
+              key={item.route}
               sx={{ color: '#fff', height: "100%", padding: 2 }}
-              onClick={() => handleNavigation(item.route)}>
+              onClick={() => handleNavigation(item.route)}
+            >
               <Typography
+                fontFamily={'Bebas Neue'}
                 variant="body1"
                 sx={{
                   color: '#fff',
@@ -78,7 +94,9 @@ export default function NavBar({ navItems, onMenuClick }: NavBarProps) {
                     transition: 'width 0.5s',
                   },
                 }}
-              >{item.title}</Typography>
+              >
+                {item.title}
+              </Typography>
             </Button>
           ))}
         </Box>
