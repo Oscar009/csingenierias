@@ -20,8 +20,8 @@ export default function NavBar({ navItems, onMenuClick }: NavBarProps) {
   };
 
   return (
-    <AppBar component="nav">
-      <Toolbar>
+    <AppBar component="nav" sx={{ paddingX: { sm: 4 } }}>
+      <Toolbar sx={{ justifyContent: 'space-around', display: 'flex' }}>
         <IconButton
           color="inherit"
           aria-label="open drawer"
@@ -31,7 +31,14 @@ export default function NavBar({ navItems, onMenuClick }: NavBarProps) {
         >
           <MenuIcon />
         </IconButton>
-        <Box onClick={() => router.push('/projects')} sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
+        <Box
+          onClick={() => router.push('/projects')}
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            cursor: 'pointer',
+          }}
+        >
           <Image
             style={{ cursor: 'pointer' }}
             src={logo}
@@ -40,10 +47,38 @@ export default function NavBar({ navItems, onMenuClick }: NavBarProps) {
             height={40}
           />
         </Box>
-        <Box sx={{ display: { xs: 'none', sm: 'block' }, height: 60 }}>
+        <Box sx={{ display: { xs: 'none', sm: 'block' }, height: 80 }}>
           {navItems.map((item) => (
-            <Button key={item.route} sx={{ color: '#fff', height: "100%" }} onClick={() => handleNavigation(item.route)}>
-              <Typography variant="body1">{item.title}</Typography>
+            <Button key={item.route}
+              sx={{ color: '#fff', height: "100%", padding: 2 }}
+              onClick={() => handleNavigation(item.route)}>
+              <Typography
+                variant="body1"
+                sx={{
+                  color: '#fff',
+                  fontWeight: 500,
+                  textTransform: 'capitalize',
+                  position: 'relative',
+                  transition: 'color 0.3s, transform 0.3s',
+                  '&:hover': {
+                    transform: 'scale(1.1)',
+                    '&::after': {
+                      width: '100%',
+                    },
+                    transition: 'width 0.5s',
+                  },
+                  '&::after': {
+                    content: '""',
+                    position: 'absolute',
+                    bottom: -2,
+                    left: 0,
+                    height: '2px',
+                    width: 0,
+                    backgroundColor: 'white',
+                    transition: 'width 0.5s',
+                  },
+                }}
+              >{item.title}</Typography>
             </Button>
           ))}
         </Box>

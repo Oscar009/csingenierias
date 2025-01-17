@@ -67,7 +67,7 @@ const ProjectsPage = () => {
         </Grid2>
       </Grid2>
 
-      <Grid2 container size={{ xs: 12 }} spacing={2}>
+      <Grid2 container size={{ xs: 12 }} spacing={2} sx={{ backgroundColor: "#f1f1f1", padding: 1, borderRadius: 1 }}>
         <Grid2 size={{ xs: 12, sm: 12, md: 6 }}>
           <Typography variant='h4' fontFamily={'Bebas Neue'}>
             {"Los Fresnos"}
@@ -159,7 +159,7 @@ const ProjectsPage = () => {
         </Grid2>
       </Grid2>
 
-      <Grid2 container size={{ xs: 12 }} spacing={2}>
+      <Grid2 container size={{ xs: 12 }} spacing={2} sx={{ backgroundColor: '#f1f1f1', padding: 1, borderRadius: 1 }}>
         <Grid2 size={{ xs: 12, sm: 12, md: 6 }}>
           <Typography variant='h4' fontFamily={'Bebas Neue'}>
             {"Condominios 'Los Venados'"}
