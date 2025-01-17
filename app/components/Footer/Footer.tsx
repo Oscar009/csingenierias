@@ -80,7 +80,7 @@ export const FooterComponent = () => {
       {/* Footer copyright */}
       <Box width={"100%"} marginTop={5}>
         <Typography fontSize={15} align="center">
-          {"Todos los derechos reservados © 2024"}
+          {"Todos los derechos reservados ©"} {new Date().getFullYear()}
         </Typography>
       </Box>
     </Box>
