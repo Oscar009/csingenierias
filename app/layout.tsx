@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import ClientThemeProvider from './theme/clientThemeProvider';
 import DrawerAppBar from './components/AppBar/DrawerAppBar';
 import { FooterComponent } from './components/Footer/Footer';
+import './globals.css'; // Archivo CSS para estilos globales
 
 export const metadata = {
   title: 'Inmobiliaria CS Ingenierías y asociados',
@@ -10,12 +11,14 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" className="h-full">
+      <body className="h-full">
         <ClientThemeProvider>
-          <DrawerAppBar />
-          {children}
-          <FooterComponent />
+          <div className="layout-container flex flex-col min-h-full">
+            <DrawerAppBar />
+            <main className="flex-grow">{children}</main>
+            <FooterComponent />
+          </div>
         </ClientThemeProvider>
       </body>
     </html>

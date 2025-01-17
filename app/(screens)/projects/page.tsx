@@ -31,8 +31,15 @@ const ProjectsPage = () => {
   }
 
   return (
-    <Grid2 container spacing={2} sx={{ paddingInline: 5, paddingBlock: 3 }}>
-      <Grid2 container size={{ xs: 12 }} spacing={2}>
+    <Grid2 container spacing={2}
+      sx={{
+        width: "100%",
+        position: "relative",
+        left: "50%",
+        transform: "translateX(-50%)",
+      }}
+    >
+      <Grid2 container size={{ xs: 12 }} spacing={2} sx={{ paddingInline: 5, paddingBlock: 3, }}>
         <Grid2 size={{ xs: 12, sm: 12, md: 6 }}>
           <Typography variant="h5" fontFamily={'Bebas Neue'}>Bienvenida</Typography>
           <CustomDivider />
@@ -54,22 +61,31 @@ const ProjectsPage = () => {
         </Grid2>
       </Grid2>
 
-      <Grid2 container size={{ xs: 12 }} spacing={2} marginTop={5}>
+      <Grid2 container size={{ xs: 12 }} spacing={2} sx={{ paddingInline: 5, paddingBlock: 3 }}>
         <Grid2 size={{ xs: 12, sm: 12, md: 12 }}>
           <CustomTitle label={"Proyectos"} />
           <CustomDivider />
         </Grid2>
       </Grid2>
 
-      <Grid2 container size={{ xs: 12 }} spacing={2}>
+      <Grid2 container size={{ xs: 12 }} spacing={2} sx={{ paddingInline: 5, paddingBlock: 3 }}>
         <Grid2 size={{ xs: 12, sm: 12, md: 12 }}>
           <CustomSubTitle label={"Proyectos activos"} />
         </Grid2>
       </Grid2>
 
-      <Grid2 container size={{ xs: 12 }} spacing={2}>
+      <Grid2
+        container
+        size={{ xs: 12 }}
+        spacing={2}
+        sx={{
+          backgroundColor: "#f1f1f1",
+          paddingInline: 5, 
+          paddingBlock: 3
+        }}
+      >
         <Grid2 size={{ xs: 12, sm: 12, md: 6 }}>
-          <Typography variant='h4' fontFamily={'Bebas Neue'}>
+          <Typography variant='h4' fontFamily={'Bebas Neue'} >
             {"Los Fresnos"}
           </Typography>
           <Typography
@@ -102,19 +118,19 @@ const ProjectsPage = () => {
           </Typography>
         </Grid2>
 
-        <Grid2 size={{ xs: 12, sm: 12, md: 6 }}>
+        <Grid2 size={{ xs: 12, sm: 12, md: 6 }} sx={{ paddingInline: 5, paddingBlock: 3 }}>
           <CustomCarousel photos={itemsLosFresnos} />
         </Grid2>
 
       </Grid2>
 
-      <Grid2 container size={{ xs: 12 }} spacing={2}>
+      <Grid2 container size={{ xs: 12 }} spacing={2} sx={{ paddingInline: 5, paddingBlock: 3 }}>
         <Grid2 size={{ xs: 12 }}>
           <CustomDivider />
         </Grid2>
       </Grid2>
 
-      <Grid2 container size={{ xs: 12 }} spacing={2}>
+      <Grid2 container size={{ xs: 12 }} spacing={2} sx={{ paddingInline: 5, paddingBlock: 3 }}>
         <Grid2 size={{ xs: 12, sm: 12, md: 6 }}>
           <Typography variant='h4' fontFamily={'Bebas Neue'}>
             {"Mazamitla"}
@@ -138,7 +154,7 @@ const ProjectsPage = () => {
         </Grid2>
       </Grid2>
 
-      <Grid2 container size={{ xs: 12 }} spacing={2}>
+      <Grid2 container size={{ xs: 12 }} spacing={2} sx={{ paddingInline: 5, paddingBlock: 3 }}>
         <Grid2 size={{ xs: 12, sm: 12, md: 6 }}>
           <CustomCarousel photos={itemsMazamitla} />
         </Grid2>
@@ -153,13 +169,13 @@ const ProjectsPage = () => {
         </Grid2>
       </Grid2>
 
-      <Grid2 container size={{ xs: 12 }} spacing={2}>
+      <Grid2 container size={{ xs: 12 }} spacing={2} sx={{ paddingInline: 5, paddingBlock: 3 }}>
         <Grid2 size={{ xs: 12 }}>
           <CustomDivider />
         </Grid2>
       </Grid2>
 
-      <Grid2 container size={{ xs: 12 }} spacing={2}>
+      <Grid2 container size={{ xs: 12 }} spacing={2} sx={{ backgroundColor: '#f1f1f1', paddingInline: 5, paddingBlock: 3 }}>
         <Grid2 size={{ xs: 12, sm: 12, md: 6 }}>
           <Typography variant='h4' fontFamily={'Bebas Neue'}>
             {"Condominios 'Los Venados'"}
@@ -188,7 +204,7 @@ const ProjectsPage = () => {
           </Typography>
         </Grid2>
 
-        <Grid2 size={{ xs: 12, sm: 12, md: 6 }}>
+        <Grid2 size={{ xs: 12, sm: 12, md: 6 }} sx={{ paddingInline: 5, paddingBlock: 3 }}>
           <CustomCarousel photos={itemsLosVenados} />
         </Grid2>
       </Grid2>
