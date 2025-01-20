@@ -13,13 +13,13 @@ export async function POST(request: Request) {
     }
 
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT),
+      host: process.env.NEXT_APP_SMTP_HOST,
+      port: Number(process.env.NEXT_APP_SMTP_PORT),
       secure: false,
       requireTLS: true,
       auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
+        user: process.env.NEXT_APP_SMTP_USER,
+        pass: process.env.NEXT_APP_SMTP_PASS,
       },
     });
 
