@@ -118,7 +118,7 @@ const ProjectsPage = () => {
           </Typography>
         </Grid2>
 
-        <Grid2 size={{ xs: 12, sm: 12, md: 6 }} sx={{ paddingInline: 5, paddingBlock: 3 }}>
+        <Grid2 size={{ xs: 12, sm: 12, md: 6 }}>
           <CustomCarousel photos={itemsLosFresnos} />
         </Grid2>
 
@@ -204,7 +204,7 @@ const ProjectsPage = () => {
           </Typography>
         </Grid2>
 
-        <Grid2 size={{ xs: 12, sm: 12, md: 6 }} sx={{ paddingInline: 5, paddingBlock: 3 }}>
+        <Grid2 size={{ xs: 12, sm: 12, md: 6 }}>
           <CustomCarousel photos={itemsLosVenados} />
         </Grid2>
       </Grid2>

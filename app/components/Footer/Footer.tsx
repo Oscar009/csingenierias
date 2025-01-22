@@ -64,7 +64,7 @@ export const FooterComponent = () => {
                   flexDirection: "column",
                   alignItems: "center",
                 }}
-                href="https://www.instagram.com/cs_asc_ixtlahuacan"
+                href="https://www.instagram.com/constr_cs_ingenierias_mx?igsh=MXE1bmYxNXFvcGR0NQ=="
                 passHref
                 target='_blank'
               >
