@@ -1,5 +1,13 @@
-import { Typography } from "@mui/material";
+'use client';
+import { useRouter } from 'next/navigation'; 
+import { useEffect } from "react";
 
 export default function Home() {
-  <Typography sx={{ paddingInline: 5, paddingBlock: 3 }}>{"Inicio - presentación"}</Typography>
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push('/home');
+  }, []);
+
+  return <></>
 }

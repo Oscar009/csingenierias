@@ -8,6 +8,7 @@ import { NavItem } from "@/app/interfaces/AppBar";
 
 const drawerWidth = 240;
 const navItems: NavItem[] = [
+  { title: 'Inicio', route: 'Home', },
   { title: 'Proyectos', route: 'Projects', },
   { title: 'Nosotros', route: 'About', },
   { title: 'Contacto', route: 'Contact', },

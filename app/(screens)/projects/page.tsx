@@ -1,9 +1,7 @@
 'use client';
 
-import { Grid2, Typography } from '@mui/material';
-import Image from 'next/image';
+import { Button, Grid2, Typography } from '@mui/material';
 import React from 'react';
-import logo from "../../assets/img/logo_negro.jpeg";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CustomCarousel from '@/app/components/Carousel/CustomCarusel';
 import { CustomDivider } from '@/app/components/CustomDivider/CustomDivider';
@@ -37,38 +35,16 @@ const ProjectsPage = () => {
         position: "relative",
         left: "50%",
         transform: "translateX(-50%)",
+        marginTop: 2
       }}
     >
-      <Grid2 container size={{ xs: 12 }} spacing={2} sx={{ paddingInline: 5, paddingBlock: 3, }}>
-        <Grid2 size={{ xs: 12, sm: 12, md: 6 }}>
-          <Typography variant="h5" fontFamily={'Bebas Neue'}>Bienvenida</Typography>
-          <CustomDivider />
-          <Typography fontFamily={'unset'}>
-            {"Nos complace ofrecerle una amplia gama de propiedades exclusivas y servicios personalizados para satisfacer todas sus necesidades inmobiliarias. Nuestra misión es ayudarle a encontrar la casa de sus sueños o la inversión perfecta, con el respaldo de nuestro equipo de expertos comprometidos con la excelencia y la transparencia. Descubra cómo podemos hacer realidad sus aspiraciones inmobiliarias."}
-          </Typography>
-        </Grid2>
-
-        <Grid2 size={{ xs: 12, sm: 12, md: 6 }} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <Image
-            src={logo}
-            alt="Logo"
-            style={{
-              width: '300px',
-              height: 'auto',
-              maxHeight: '200px'
-            }}
-          />
-        </Grid2>
-      </Grid2>
-
-      <Grid2 container size={{ xs: 12 }} spacing={2} sx={{ paddingInline: 5, paddingBlock: 3 }}>
+      <Grid2 container size={{ xs: 12 }} spacing={2} sx={{ paddingInline: 5 }}>
         <Grid2 size={{ xs: 12, sm: 12, md: 12 }}>
           <CustomTitle label={"Proyectos"} />
-          <CustomDivider />
         </Grid2>
       </Grid2>
 
-      <Grid2 container size={{ xs: 12 }} spacing={2} sx={{ paddingInline: 5, paddingBlock: 3 }}>
+      <Grid2 container size={{ xs: 12 }} spacing={2} sx={{ paddingInline: 5 }}>
         <Grid2 size={{ xs: 12, sm: 12, md: 12 }}>
           <CustomSubTitle label={"Proyectos activos"} />
         </Grid2>
@@ -80,7 +56,7 @@ const ProjectsPage = () => {
         spacing={2}
         sx={{
           backgroundColor: "#f1f1f1",
-          paddingInline: 5, 
+          paddingInline: 5,
           paddingBlock: 3
         }}
       >
@@ -90,20 +66,22 @@ const ProjectsPage = () => {
           </Typography>
           <Typography
             variant='body1'
-            onClick={handleOpenMapsIxtlahuacan}
-            sx={{
-              cursor: "pointer",
-              padding: 1,
-              border: "1px solid",
-              borderColor: "primary",
-              borderRadius: 1,
-            }}
             fontFamily={'Bebas Neue'}
+            sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
           >
-            {"Fraccionamiento residencial"}
-            <LocationOnIcon fontSize='small' color={"error"} />
-            {"Ixtlahuacán Del Río"}
+            {"Fraccionamiento residencial, Ixtlahuacán Del Río"}
+            <Button
+              onClick={handleOpenMapsIxtlahuacan}
+              variant='outlined'
+              sx={{ marginLeft: 1 }}
+            >
+              <LocationOnIcon fontSize='small' />
+              <Typography fontFamily={'Bebas Neue'} sx={{ paddingLeft: 1 }}>
+                {"Ubicación"}
+              </Typography>
+            </Button>
           </Typography>
+          <CustomDivider />
           <Typography variant='h6' marginTop={1} fontFamily={'Bebas Neue'}>
             {"Introducción"}
           </Typography>
@@ -118,16 +96,10 @@ const ProjectsPage = () => {
           </Typography>
         </Grid2>
 
-        <Grid2 size={{ xs: 12, sm: 12, md: 6 }} sx={{ paddingInline: 5, paddingBlock: 3 }}>
+        <Grid2 size={{ xs: 12, sm: 12, md: 6 }}>
           <CustomCarousel photos={itemsLosFresnos} />
         </Grid2>
 
-      </Grid2>
-
-      <Grid2 container size={{ xs: 12 }} spacing={2} sx={{ paddingInline: 5, paddingBlock: 3 }}>
-        <Grid2 size={{ xs: 12 }}>
-          <CustomDivider />
-        </Grid2>
       </Grid2>
 
       <Grid2 container size={{ xs: 12 }} spacing={2} sx={{ paddingInline: 5, paddingBlock: 3 }}>
@@ -137,24 +109,26 @@ const ProjectsPage = () => {
           </Typography>
           <Typography
             variant='body1'
-            onClick={handleOpenMapsMazamitla}
-            sx={{
-              cursor: "pointer",
-              padding: 1,
-              border: "1px solid",
-              borderColor: "primary",
-              borderRadius: 1,
-            }}
             fontFamily={'Bebas Neue'}
+            sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
           >
-            {"Casas e inversiones / Epenche "}
-            <LocationOnIcon fontSize='small' color={"error"} />
-            {"Mazamitla, Pueblo Mágico"}
+            {"Casas e inversiones / Epenche, Mazamitla, Pueblo Mágico"}
+            <Button
+              onClick={handleOpenMapsMazamitla}
+              variant='outlined'
+              sx={{ marginLeft: 1 }}
+            >
+              <LocationOnIcon fontSize='small' />
+              <Typography fontFamily={'Bebas Neue'} sx={{ paddingLeft: 1 }}>
+                {"Ubicación"}
+              </Typography>
+            </Button>
           </Typography>
+          <CustomDivider />
         </Grid2>
       </Grid2>
 
-      <Grid2 container size={{ xs: 12 }} spacing={2} sx={{ paddingInline: 5, paddingBlock: 3 }}>
+      <Grid2 container size={{ xs: 12 }} spacing={2} sx={{ paddingInline: 5 }}>
         <Grid2 size={{ xs: 12, sm: 12, md: 6 }}>
           <CustomCarousel photos={itemsMazamitla} />
         </Grid2>
@@ -169,33 +143,29 @@ const ProjectsPage = () => {
         </Grid2>
       </Grid2>
 
-      <Grid2 container size={{ xs: 12 }} spacing={2} sx={{ paddingInline: 5, paddingBlock: 3 }}>
-        <Grid2 size={{ xs: 12 }}>
-          <CustomDivider />
-        </Grid2>
-      </Grid2>
-
       <Grid2 container size={{ xs: 12 }} spacing={2} sx={{ backgroundColor: '#f1f1f1', paddingInline: 5, paddingBlock: 3 }}>
         <Grid2 size={{ xs: 12, sm: 12, md: 6 }}>
           <Typography variant='h4' fontFamily={'Bebas Neue'}>
             {"Condominios 'Los Venados'"}
           </Typography>
-          <Typography
+            <Typography
             variant='body1'
-            onClick={handleOpenMapsLosCabos}
-            sx={{
-              cursor: "pointer",
-              padding: 1,
-              border: "1px solid",
-              borderColor: "primary",
-              borderRadius: 1,
-            }}
             fontFamily={'Bebas Neue'}
-          >
-            {"Conjunto departamental"}
-            <LocationOnIcon fontSize='small' color={"error"} />
-            {"Cabo San Lucas"}
-          </Typography>
+            sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
+            >
+            {"Conjunto departamental / Cabo San Lucas"}
+            <Button
+              onClick={handleOpenMapsLosCabos}
+              variant='outlined'
+              sx={{ marginLeft: 1 }}
+            >
+              <LocationOnIcon fontSize='small' />
+              <Typography fontFamily={'Bebas Neue'} sx={{ paddingLeft: 1 }}>
+              {"Ubicación"}
+              </Typography>
+            </Button>
+            </Typography>
+            <CustomDivider />
           <Typography variant='h6' fontFamily={'Bebas Neue'}>
             {"Introducción"}
           </Typography>
@@ -204,7 +174,7 @@ const ProjectsPage = () => {
           </Typography>
         </Grid2>
 
-        <Grid2 size={{ xs: 12, sm: 12, md: 6 }} sx={{ paddingInline: 5, paddingBlock: 3 }}>
+        <Grid2 size={{ xs: 12, sm: 12, md: 6 }}>
           <CustomCarousel photos={itemsLosVenados} />
         </Grid2>
       </Grid2>

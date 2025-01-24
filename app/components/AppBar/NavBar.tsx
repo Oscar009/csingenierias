@@ -24,7 +24,7 @@ export default function NavBar({ navItems, onMenuClick }: NavBarProps) {
       <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
         {/* Contenedor del logo (para pantallas grandes) */}
         <Box
-          onClick={() => router.push('/projects')}
+          onClick={() => router.push('/home')}
           sx={{
             display: 'flex',
             alignItems: 'center',

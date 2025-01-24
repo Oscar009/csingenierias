@@ -53,8 +53,8 @@ const CustomCarousel = ({ photos }: CustomCarouselProps) => {
               <Image
                 src={item.src}
                 alt={item.altText}
-                layout="fill" // La imagen ocupa todo el contenedor
-                objectFit="contain" // Evita la deformación, muestra la imagen entera
+                fill
+                objectFit="contain"
                 priority={index === activeIndex} // Prioriza la carga de la imagen actual
                 placeholder="blur"
                 blurDataURL={item.src}
