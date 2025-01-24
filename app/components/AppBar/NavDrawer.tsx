@@ -22,7 +22,7 @@ export default function NavDrawer({ navItems, onClose }: NavDrawerProps) {
 
   return (
     <Box onClick={onClose} sx={{ textAlign: 'center', backgroundColor: theme.palette.primary.main, height: "100vh" }} >
-      <Box onClick={() => router.push('/projects')} sx={{ my: 2 }}>
+      <Box onClick={() => router.push('/home')} sx={{ my: 2 }}>
         <Image
           style={{ cursor: 'pointer' }}
           src={logo}
