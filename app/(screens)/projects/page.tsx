@@ -3,7 +3,6 @@
 import { Button, Grid2, Typography } from '@mui/material';
 import React from 'react';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import CustomCarousel from '@/app/components/Carousel/CustomCarusel';
 import { CustomDivider } from '@/app/components/CustomDivider/CustomDivider';
 import { itemsLosFresnos } from './photos/losfresnos';
 import { CustomSubTitle } from '@/app/components/Titles/CustomSubTitle/CustomSubTitle';
@@ -11,6 +10,7 @@ import { CustomTitle } from '@/app/components/Titles/CustomTitle/CustomTitle';
 import { itemsMazamitla } from './photos/mazamitla';
 import { itemsLosVenados } from './photos/losvenados';
 import AnimatedText from '@/app/components/Animated/AnimatedText';
+import CustomEmblaCarousel from '@/app/components/Carousel/CustomCarusel';
 
 const ProjectsPage = () => {
 
@@ -110,7 +110,7 @@ const ProjectsPage = () => {
         </Grid2>
 
         <Grid2 size={{ xs: 12, sm: 12, md: 6 }}>
-          <CustomCarousel photos={itemsLosFresnos} />
+          <CustomEmblaCarousel photos={itemsLosFresnos} />
         </Grid2>
 
       </Grid2>
@@ -147,7 +147,7 @@ const ProjectsPage = () => {
 
       <Grid2 container size={{ xs: 12 }} spacing={2} sx={{ paddingInline: 5 }}>
         <Grid2 size={{ xs: 12, sm: 12, md: 6 }}>
-          <CustomCarousel photos={itemsMazamitla} />
+          <CustomEmblaCarousel photos={itemsMazamitla} />
         </Grid2>
 
         <Grid2 size={{ xs: 12, sm: 12, md: 6 }}>
@@ -204,7 +204,7 @@ const ProjectsPage = () => {
         </Grid2>
 
         <Grid2 size={{ xs: 12, sm: 12, md: 6 }}>
-          <CustomCarousel photos={itemsLosVenados} />
+          <CustomEmblaCarousel photos={itemsLosVenados} />
         </Grid2>
       </Grid2>
 
