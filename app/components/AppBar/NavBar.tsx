@@ -64,7 +64,31 @@ export default function NavBar({ navItems, onMenuClick }: NavBarProps) {
           {navItems.map((item) => (
             <Button
               key={item.route}
-              sx={{ color: '#fff', height: "100%", padding: 2 }}
+              sx={{
+                height: "100%", padding: 2,
+                color: '#fff',
+                fontWeight: 500,
+                textTransform: 'capitalize',
+                position: 'relative',
+                transition: 'color 0.3s, transform 0.3s',
+                '&:hover': {
+                  transform: 'scale(1.1)',
+                  '&::after': {
+                    width: '100%',
+                  },
+                  transition: 'width 0.5s',
+                },
+                '&::after': {
+                  content: '""',
+                  position: 'absolute',
+                  bottom: -2,
+                  left: 0,
+                  height: '2px',
+                  width: 0,
+                  backgroundColor: 'white',
+                  transition: 'width 0.5s',
+                },
+              }}
               onClick={() => handleNavigation(item.route)}
             >
               <Typography
@@ -72,8 +96,6 @@ export default function NavBar({ navItems, onMenuClick }: NavBarProps) {
                 variant="body1"
                 sx={{
                   color: '#fff',
-                  fontWeight: 500,
-                  textTransform: 'capitalize',
                   position: 'relative',
                   transition: 'color 0.3s, transform 0.3s',
                   '&:hover': {
