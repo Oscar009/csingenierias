@@ -4,13 +4,13 @@ import { Button, Grid2, Typography } from '@mui/material';
 import React from 'react';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { CustomDivider } from '@/app/components/CustomDivider/CustomDivider';
-import { itemsLosFresnos } from './photos/losfresnos';
 import { CustomSubTitle } from '@/app/components/Titles/CustomSubTitle/CustomSubTitle';
 import { CustomTitle } from '@/app/components/Titles/CustomTitle/CustomTitle';
-import { itemsMazamitla } from './photos/mazamitla';
-import { itemsLosVenados } from './photos/losvenados';
 import AnimatedText from '@/app/components/Animated/AnimatedText';
 import CustomEmblaCarousel from '@/app/components/Carousel/CustomCarusel';
+import { itemsLosFresnos } from './photos/losfresnos';
+import { itemsMazamitla } from './photos/mazamitla';
+import { itemsLosVenados } from './photos/losvenados';
 
 const ProjectsPage = () => {
 
