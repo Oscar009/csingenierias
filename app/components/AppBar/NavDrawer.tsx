@@ -1,7 +1,7 @@
 'use client';
 
 import { NavItem } from "@/app/interfaces/AppBar";
-import { Box, Divider, List, ListItem, ListItemButton, ListItemText, Typography, Collapse } from "@mui/material";
+import { Box, Divider, List, ListItem, ListItemButton, ListItemText, Collapse } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from 'next/navigation';
 import logo from "../../assets/img/logo_blanco.png";
@@ -22,11 +22,11 @@ export default function NavDrawer({ navItems, projectSubItems, onClose }: NavDra
 
   const handleNavigation = (route: string) => {
     router.push(`/${route.toLowerCase()}`);
-    onClose(); // Cierra el drawer después de la navegación
+    onClose();
   };
 
   const handleProjectsClick = () => {
-    setOpenProjects(!openProjects); // Alternar la expansión del menú de proyectos
+    setOpenProjects(!openProjects);
   };
 
   return (
@@ -68,7 +68,7 @@ export default function NavDrawer({ navItems, projectSubItems, onClose }: NavDra
             </Box>
           ) : (
             <ListItem key={item.route} disablePadding>
-              <ListItemButton sx={{ textAlign: 'center' }} onClick={() => handleNavigation(item.route)}>
+              <ListItemButton sx={{ textAlign: 'start' }} onClick={() => handleNavigation(item.route)}>
                 <ListItemText sx={{ color: 'white' }} primary={item.title} />
               </ListItemButton>
             </ListItem>

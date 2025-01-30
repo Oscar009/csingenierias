@@ -37,7 +37,9 @@ export default function NavBar({ navItems, projectSubItems, onMenuClick }: NavBa
   };
 
   return (
-    <AppBar component="nav" sx={{ boxShadow: 'none' }}>
+    <AppBar
+      component="nav" sx={{ boxShadow: 'none', width: '100%', top: 0, left: 0, right: 0, position: { xs: 'sticky', sm: 'fixed' } }}
+    >
       <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
         {/* Contenedor del logo (para pantallas grandes) */}
         <Box

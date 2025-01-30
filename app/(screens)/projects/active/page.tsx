@@ -31,13 +31,11 @@ const ProjectsPage = () => {
 
   return (
     <Grid2 container spacing={2}
-      sx={{
-        width: "100%",
-        position: "relative",
-        left: "50%",
-        transform: "translateX(-50%)",
-        marginTop: 2
-      }}
+    sx={{
+      width: "100%",
+      margin: "0 auto", // Centra el contenido horizontalmente
+      marginTop: 2
+    }}
     >
       <Grid2 container size={{ xs: 12 }} spacing={2} sx={{ paddingInline: 5 }}>
         <Grid2 size={{ xs: 12, sm: 12, md: 12 }}>
