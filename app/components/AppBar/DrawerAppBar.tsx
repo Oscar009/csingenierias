@@ -28,7 +28,7 @@ export default function DrawerAppBar() {
   };
 
   return (
-    <Box sx={{ display: 'flex', marginBottom: 10 }}>
+    <Box sx={{ display: 'flex'}}>
       <CssBaseline />
       <NavBar navItems={navItems} projectSubItems={projectSubItems} onMenuClick={handleDrawerToggle} />
       <nav>
