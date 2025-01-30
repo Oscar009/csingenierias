@@ -1,6 +1,6 @@
-import { CarouselItem } from "@/app/components/Carousel/CustomCarusel";
 
-export const itemsLosFresnos: CarouselItem[] = [
+
+export const itemsLosFresnos: any[] = [
   {
     src: '/assets/images/projects/losfresnos/LF1.jpg',
     altText: '',

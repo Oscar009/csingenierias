@@ -1,6 +1,5 @@
-import { CarouselItem } from "@/app/components/Carousel/CustomCarusel";
 
-export const itemsLosVenados: CarouselItem[] = [
+export const itemsLosVenados: any[] = [
   {
     src: '/assets/images/projects/losvenados/LV1.jpg',
     altText: '',

@@ -69,7 +69,7 @@ export const FooterComponent = () => {
                 target='_blank'
               >
                 <InstagramIcon fontSize='large' />
-                <Typography>{"@cs_asc_ixtlahuacan"}</Typography>
+                <Typography>{"@constr_cs_ingenierias_mx"}</Typography>
               </Link>
             </Box>
           </Box>

@@ -8,12 +8,16 @@ import { NavItem } from "@/app/interfaces/AppBar";
 
 const drawerWidth = 240;
 const navItems: NavItem[] = [
-  { title: 'Inicio', route: 'Home', },
-  { title: 'Proyectos', route: 'Projects', },
-  { title: 'Nosotros', route: 'About', },
-  { title: 'Contacto', route: 'Contact', },
-/*   { title: 'Services', route: 'Services', },
-  { title: 'Frequent Questions', route: 'FrequentQuestions', }, */
+  { title: 'Inicio', route: 'Home' },
+  { title: 'Proyectos', route: 'Projects' }, // Este será el elemento padre en el NavBar
+  { title: 'Nosotros', route: 'About' },
+  { title: 'Contacto', route: 'Contact' },
+];
+
+// Rutas específicas para los submenús de "Proyectos"
+const projectSubItems: NavItem[] = [
+  { title: 'Proyectos Activos', route: 'Projects/Active' },
+  { title: 'Proyectos Ejecutados', route: 'Projects/Completed' },
 ];
 
 export default function DrawerAppBar() {
@@ -24,16 +28,16 @@ export default function DrawerAppBar() {
   };
 
   return (
-    <Box sx={{ display: 'flex', marginBottom: 10 }}>
+    <Box sx={{ display: 'flex'}}>
       <CssBaseline />
-      <NavBar navItems={navItems} onMenuClick={handleDrawerToggle} />
+      <NavBar navItems={navItems} projectSubItems={projectSubItems} onMenuClick={handleDrawerToggle} />
       <nav>
         <Drawer
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
@@ -41,7 +45,7 @@ export default function DrawerAppBar() {
           }}
           anchor="right"
         >
-          <NavDrawer navItems={navItems} onClose={handleDrawerToggle} />
+          <NavDrawer navItems={navItems} projectSubItems={projectSubItems} onClose={handleDrawerToggle} />
         </Drawer>
       </nav>
     </Box>
