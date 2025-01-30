@@ -1,6 +1,5 @@
-import { CarouselItem } from "@/app/components/Carousel/CustomCarusel";
 
-export const itemsMazamitla: CarouselItem[] = [
+export const itemsMazamitla: any[] = [
   {
     src: '/assets/images/projects/mazamitla/M1.jpg',
     altText: '',
