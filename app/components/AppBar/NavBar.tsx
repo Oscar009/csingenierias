@@ -91,13 +91,6 @@ export default function NavBar({ navItems, projectSubItems, onMenuClick }: NavBa
                     textTransform: 'capitalize',
                     position: 'relative',
                     transition: 'color 0.3s, transform 0.3s',
-                    '&:hover': {
-                      transform: 'scale(1.1)',
-                      '&::after': {
-                        width: '100%',
-                      },
-                      transition: 'width 0.5s',
-                    },
                   }}
                   onClick={handleMenuOpen}
                 >
@@ -165,16 +158,6 @@ export default function NavBar({ navItems, projectSubItems, onMenuClick }: NavBa
                     '&::after': {
                       width: '100%',
                     },
-                    transition: 'width 0.5s',
-                  },
-                  '&::after': {
-                    content: '""',
-                    position: 'absolute',
-                    bottom: -2,
-                    left: 0,
-                    height: '2px',
-                    width: 0,
-                    backgroundColor: 'white',
                     transition: 'width 0.5s',
                   },
                 }}

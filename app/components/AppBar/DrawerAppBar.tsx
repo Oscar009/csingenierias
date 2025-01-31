@@ -5,6 +5,7 @@ import { Box, CssBaseline, Drawer } from "@mui/material";
 import NavBar from "./NavBar";
 import NavDrawer from "./NavDrawer";
 import { NavItem } from "@/app/interfaces/AppBar";
+import { usePathname } from "next/navigation"; // Importa usePathname
 
 const drawerWidth = 240;
 const navItems: NavItem[] = [
@@ -22,13 +23,24 @@ const projectSubItems: NavItem[] = [
 
 export default function DrawerAppBar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname(); // Obtén la ruta actual
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
+  // Determina si estamos en la ruta de inicio
+  const isHome = pathname === '/';
+
   return (
-    <Box sx={{ display: 'flex'}}>
+    <Box
+      sx={{
+        display: 'flex',
+        marginBottom: isHome
+          ? 0 // Sin margen en la ruta de inicio
+          : { xs: 'none', sm: 10 }, // Margen responsivo: 5 en móviles, 10 en desktop
+      }}
+    >
       <CssBaseline />
       <NavBar navItems={navItems} projectSubItems={projectSubItems} onMenuClick={handleDrawerToggle} />
       <nav>
