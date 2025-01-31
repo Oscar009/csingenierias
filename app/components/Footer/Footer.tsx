@@ -64,12 +64,12 @@ export const FooterComponent = () => {
                   flexDirection: "column",
                   alignItems: "center",
                 }}
-                href="https://www.instagram.com/cs_asc_ixtlahuacan"
+                href="https://www.instagram.com/constr_cs_ingenierias_mx?igsh=MXE1bmYxNXFvcGR0NQ=="
                 passHref
                 target='_blank'
               >
                 <InstagramIcon fontSize='large' />
-                <Typography>{"@cs_asc_ixtlahuacan"}</Typography>
+                <Typography>{"@constr_cs_ingenierias_mx"}</Typography>
               </Link>
             </Box>
           </Box>
@@ -80,7 +80,7 @@ export const FooterComponent = () => {
       {/* Footer copyright */}
       <Box width={"100%"} marginTop={5}>
         <Typography fontSize={15} align="center">
-          {"Todos los derechos reservados © 2024"}
+          {"Todos los derechos reservados ©"} {new Date().getFullYear()}
         </Typography>
       </Box>
     </Box>
