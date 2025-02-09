@@ -5,6 +5,7 @@ import { TextField, Button, Typography, Grid2 } from "@mui/material";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { sendEmail } from "./services/emailService";
+import AnimatedText from "@/app/components/Animated/AnimatedText";
 
 // Definir los tipos de datos del formulario
 interface IFormInput {
@@ -73,98 +74,100 @@ const CustomForm: React.FC = () => {
   }, []);
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <Grid2 container spacing={2}>
-        {/* Campo de Nombre */}
-        <Grid2 size={{ xs: 12 }}>
-          <Controller
-            name="name"
-            control={control}
-            render={({ field }) => (
-              <TextField
-                {...field}
-                size="small"
-                variant="filled"
-                label="Nombre"
-                fullWidth
-                error={!!errors.name}
-                helperText={errors.name?.message}
-              />
-            )}
-          />
-        </Grid2>
-
-        {/* Campo de Correo Electrónico */}
-        <Grid2 size={{ xs: 12 }}>
-          <Controller
-            name="email"
-            control={control}
-            render={({ field }) => (
-              <TextField
-                {...field}
-                size="small"
-                variant="filled"
-                label="Correo Electrónico"
-                fullWidth
-                error={!!errors.email}
-                helperText={errors.email?.message}
-              />
-            )}
-          />
-        </Grid2>
-
-        {/* Campo de Mensaje */}
-        <Grid2 size={{ xs: 12 }}>
-          <Controller
-            name="message"
-            control={control}
-            render={({ field }) => (
-              <TextField
-                {...field}
-                size="small"
-                variant="filled"
-                label="Mensaje"
-                fullWidth
-                multiline
-                rows={4}
-                error={!!errors.message}
-                helperText={errors.message?.message}
-                slotProps={{
-                  inputLabel: {
-                    shrink: true, 
-                  },
-                }}
-              />
-            )}
-          />
-        </Grid2>
-
-        {/* Botón de Enviar */}
-        <Grid2 size={{ xs: 12 }}>
-          <Button
-            type="submit"
-            variant="contained"
-            color="primary"
-            fullWidth
-            disabled={isSubmitting} // Deshabilitar mientras se envía
-          >
-            {isSubmitting ? "Enviando..." : "Enviar"}
-          </Button>
-        </Grid2>
-
-        {/* Mensaje de estado */}
-        {statusMessage && (
+    <AnimatedText direction="right">
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <Grid2 container spacing={2}>
+          {/* Campo de Nombre */}
           <Grid2 size={{ xs: 12 }}>
-            <Typography
-              variant="body2"
-              color={statusMessage.includes("Error") ? "error" : "success"}
-            >
-              {statusMessage}
-            </Typography>
+            <Controller
+              name="name"
+              control={control}
+              render={({ field }) => (
+                <TextField
+                  {...field}
+                  size="small"
+                  variant="filled"
+                  label="Nombre"
+                  fullWidth
+                  error={!!errors.name}
+                  helperText={errors.name?.message}
+                />
+              )}
+            />
           </Grid2>
-        )}
-      </Grid2>
-    </form>
+
+          {/* Campo de Correo Electrónico */}
+          <Grid2 size={{ xs: 12 }}>
+            <Controller
+              name="email"
+              control={control}
+              render={({ field }) => (
+                <TextField
+                  {...field}
+                  size="small"
+                  variant="filled"
+                  label="Correo Electrónico"
+                  fullWidth
+                  error={!!errors.email}
+                  helperText={errors.email?.message}
+                />
+              )}
+            />
+          </Grid2>
+
+          {/* Campo de Mensaje */}
+          <Grid2 size={{ xs: 12 }}>
+            <Controller
+              name="message"
+              control={control}
+              render={({ field }) => (
+                <TextField
+                  {...field}
+                  size="small"
+                  variant="filled"
+                  label="Mensaje"
+                  fullWidth
+                  multiline
+                  rows={4}
+                  error={!!errors.message}
+                  helperText={errors.message?.message}
+                  slotProps={{
+                    inputLabel: {
+                      shrink: true,
+                    },
+                  }}
+                />
+              )}
+            />
+          </Grid2>
+
+          {/* Botón de Enviar */}
+          <Grid2 size={{ xs: 12 }}>
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              fullWidth
+              disabled={isSubmitting} // Deshabilitar mientras se envía
+            >
+              {isSubmitting ? "Enviando..." : "Enviar"}
+            </Button>
+          </Grid2>
+
+          {/* Mensaje de estado */}
+          {statusMessage && (
+            <Grid2 size={{ xs: 12 }}>
+              <Typography
+                variant="body2"
+                color={statusMessage.includes("Error") ? "error" : "success"}
+              >
+                {statusMessage}
+              </Typography>
+            </Grid2>
+          )}
+        </Grid2>
+      </form>
+    </AnimatedText>
   );
 };
 

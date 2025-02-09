@@ -5,6 +5,7 @@ import React from 'react'
 import CustomForm from './CustomForm'
 import { WhatsappMessage } from './WhatsappMessage'
 import TelegramIcon from '@mui/icons-material/Telegram';
+import AnimatedText from '@/app/components/Animated/AnimatedText'
 
 const ContactPage = () => {
   return (
@@ -12,7 +13,9 @@ const ContactPage = () => {
       <Grid2 size={{ xs: 12, sm: 12, md: 12 }}>
         <Box display={"flex"} alignItems={"center"}>
           <CustomTitle label={"Contacto"} />
-          <TelegramIcon sx={{ fontSize: 50 }} />
+          <AnimatedText direction="right">
+            <TelegramIcon sx={{ fontSize: 50 }} />
+          </AnimatedText>
         </Box>
         <CustomDivider />
       </Grid2>

@@ -2,7 +2,7 @@ export const coverPhotos = [
   {
     src: '/assets/images/cover/P1.jpg',
     altText: '',
-    caption: 'Hacemos que te sientas como en casa 🏠',
+    caption: '',
   },
   {
     src: '/assets/images/cover/P2.jpg',
