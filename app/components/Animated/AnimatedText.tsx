@@ -22,7 +22,7 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ children, direction = 'left
   // Definición de las variantes de animación
   const variants: Variants = {
     hidden: { opacity: 0, x: direction === 'left' ? -100 : 100 }, // Estado inicial
-    visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: 'easeOut' } }, // Estado final
+    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: 'easeOut' } }, // Estado final
   };
 
   return (
