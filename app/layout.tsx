@@ -6,7 +6,7 @@ import './globals.css'; // Archivo CSS para estilos globales
 
 export const metadata = {
   title: 'Inmobiliaria CS Ingenierías y asociados',
-  description: 'A Next.js 14 project using Material-UI and TypeScript',
+  description: 'Construcciones CS Ingenierías S.A. de C.V.',
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

@@ -91,7 +91,9 @@ const CustomEmblaCarousel = ({
                   src={item.src}
                   alt={item.altText}
                   fill
-                  objectFit={adjustSize ? 'cover' : 'contain'} // Ajusta el tamaño si adjustSize es true
+                  style={{
+                    objectFit: adjustSize ? 'cover' : 'contain', // Use the style prop instead of objectFit
+                  }}
                   priority={index === 0} // Prioriza la carga de la primera imagen
                   placeholder="blur"
                   blurDataURL={item.src}

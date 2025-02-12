@@ -14,7 +14,7 @@ const theme = createTheme({
     },
   },
   typography:{
-    fontFamily: 'Arial, sans-serif',
+    fontFamily: 'Montserrat, sans-serif',
     h2: {
       fontFamily: '"Bebas Neue", cursive',
     },
