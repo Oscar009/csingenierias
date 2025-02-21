@@ -14,6 +14,7 @@ import { itemsCasaDeLujoSantaElena } from './photos/CasaDeLujoSantaElena';
 import { itemsFraccionamientoSantaElena } from './photos/FraccionamientoSantaElena';
 import { itemsOficinasCS } from './photos/OficinasCS';
 import { itemsCanchaSantaMariaDelOro } from './photos/CanchasSantaMariaDelOro';
+import { itemsBancos } from './photos/Bancos';
 
 const ProjectsCompleted = () => {
   return (
@@ -205,7 +206,7 @@ const ProjectsCompleted = () => {
         </Grid2>
         <CustomEmblaCarousel photos={itemsOficinasCS} />
       </Grid2>
-      
+
       <Grid2
         container
         size={{ xs: 12 }}
@@ -240,7 +241,7 @@ const ProjectsCompleted = () => {
         <Grid2 size={{ xs: 12, sm: 12, md: 6 }}>
           <AnimatedText direction="right">
             <Typography variant='h4' fontFamily={'Bebas Neue'}>
-              {"Banco"}
+              {"BBVA Bancomer"}
             </Typography>
           </AnimatedText>
           <AnimatedText direction="right">
@@ -249,13 +250,32 @@ const ProjectsCompleted = () => {
               fontFamily={'Bebas Neue'}
               sx={{ display: 'flex' }}
             >
-              {"Localización"}
+              {"Querétaro, Amatitan, Chilchota"}
               <LocationOnIcon fontSize='small' />
-              {"Año"}
+              {"2017 - 2020"}
             </Typography>
           </AnimatedText>
         </Grid2>
-        {/* <CustomEmblaCarousel photos={itemsOficinasCS} /> */}
+      </Grid2>
+
+      <Grid2
+        container
+        size={{ xs: 12 }}
+        spacing={2}
+        sx={{
+          backgroundColor: "#f1f1f1",
+          paddingInline: 5,
+          paddingBlock: 3
+        }}
+      >
+        <Grid2 size={{ xs: 12, sm: 12, md: 6 }}>
+          <AnimatedText direction="right">
+            <Typography variant='h4' fontFamily={'Bebas Neue'}>
+              {"Bancos"}
+            </Typography>
+          </AnimatedText>
+        </Grid2>
+        <CustomEmblaCarousel photos={itemsBancos} />
       </Grid2>
 
     </Grid2>
